@@ -60,7 +60,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Exportar.cs" />
     <Compile Include="Frase.cs" />
     <Compile Include="frmAgregarAnotacion.cs">
