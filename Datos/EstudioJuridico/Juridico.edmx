@@ -1,0 +1,334 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Estudio_JuridicoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="spFichaPredialesconsultar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="numero_ficha" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spFichaPredialescrear" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="numero_ficha" Type="varchar" Mode="In" />
+          <Parameter Name="folio_matriz" Type="varchar" Mode="In" />
+          <Parameter Name="estado_folio_matriz" Type="bit" Mode="In" />
+          <Parameter Name="fecha_apertura_folio" Type="datetime" Mode="In" />
+          <Parameter Name="fecha_primera_anotacion" Type="datetime" Mode="In" />
+          <Parameter Name="area_escritura" Type="numeric" Mode="In" />
+          <Parameter Name="area_ovc" Type="numeric" Mode="In" />
+          <Parameter Name="area_folio" Type="numeric" Mode="In" />
+          <Parameter Name="ruta_archivo" Type="varchar" Mode="In" />
+          <Parameter Name="razon_diferencia_areas" Type="varchar" Mode="In" />
+          <Parameter Name="antecedentes" Type="varchar" Mode="In" />
+          <Parameter Name="estudio_folio_matriz" Type="varchar" Mode="In" />
+          <Parameter Name="analisis_areas" Type="varchar" Mode="In" />
+          <Parameter Name="anotacion_que_afecte_la_inscripcion" Type="varchar" Mode="In" />
+          <Parameter Name="proteccion_colectiva" Type="varchar" Mode="In" />
+          <Parameter Name="linderos" Type="varchar" Mode="In" />
+          <Parameter Name="instrucciones_visita_campo" Type="varchar" Mode="In" />
+          <Parameter Name="direccion_folio" Type="varchar" Mode="In" />
+          <Parameter Name="quien_elaboro_yaprobo" Type="varchar" Mode="In" />
+          <Parameter Name="fecha_control_calidad_juridico" Type="datetime" Mode="In" />
+          <Parameter Name="control_calidad_juridico" Type="varchar" Mode="In" />
+          <Parameter Name="aprobacion_interventoria" Type="varchar" Mode="In" />
+          <Parameter Name="fecha_aprobacion" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="spFichaPredialeseliminar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_ficha" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spFichaPredialesmodificar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_ficha" Type="int" Mode="In" />
+          <Parameter Name="folio_matriz" Type="varchar" Mode="In" />
+          <Parameter Name="estado_folio_matriz" Type="bit" Mode="In" />
+          <Parameter Name="fecha_apertura_folio" Type="datetime" Mode="In" />
+          <Parameter Name="fecha_primera_anotacion" Type="datetime" Mode="In" />
+          <Parameter Name="area_escritura" Type="numeric" Mode="In" />
+          <Parameter Name="area_ovc" Type="numeric" Mode="In" />
+          <Parameter Name="area_folio" Type="numeric" Mode="In" />
+          <Parameter Name="ruta_archivo" Type="varchar" Mode="In" />
+          <Parameter Name="razon_diferencia_areas" Type="varchar" Mode="In" />
+          <Parameter Name="antecedentes" Type="varchar" Mode="In" />
+          <Parameter Name="estudio_folio_matriz" Type="varchar" Mode="In" />
+          <Parameter Name="analisis_areas" Type="varchar" Mode="In" />
+          <Parameter Name="anotacion_que_afecta_la_inscripcion" Type="varchar" Mode="In" />
+          <Parameter Name="proteccion_colectiva" Type="varchar" Mode="In" />
+          <Parameter Name="linderos" Type="varchar" Mode="In" />
+          <Parameter Name="instrucciones_visita_campo" Type="varchar" Mode="In" />
+          <Parameter Name="direccion_folio" Type="varchar" Mode="In" />
+          <Parameter Name="quien_elaboro_yaprobo" Type="varchar" Mode="In" />
+          <Parameter Name="fecha_control_calidad_juridico" Type="datetime" Mode="In" />
+          <Parameter Name="control_calidad_juridico" Type="varchar" Mode="In" />
+          <Parameter Name="aprobacion_interventoria" Type="varchar" Mode="In" />
+          <Parameter Name="fecha_aprobacion" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="spFichaPredialPropietariosconsultar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_ficha" Type="int" Mode="In" />
+          <Parameter Name="id_propietario" Type="int" Mode="In" />
+          <Parameter Name="anotacion" Type="varchar" Mode="In" />
+          <Parameter Name="id_ficha_predial_propietario" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spFichaPredialPropietarioscrear" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_ficha" Type="int" Mode="In" />
+          <Parameter Name="id_propietario" Type="int" Mode="In" />
+          <Parameter Name="anotacion" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spFichaPredialPropietariosmodificar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_ficha_perdial_propietario" Type="int" Mode="In" />
+          <Parameter Name="id_propietario" Type="int" Mode="In" />
+          <Parameter Name="anotacion" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spMatriculaDerivadasconsultar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_ficha" Type="int" Mode="In" />
+          <Parameter Name="matricula" Type="varchar" Mode="In" />
+          <Parameter Name="estado" Type="bit" Mode="In" />
+          <Parameter Name="pk_predio" Type="varchar" Mode="In" />
+          <Parameter Name="ubicar" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spMatriculaDerivadascrear" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_ficha" Type="int" Mode="In" />
+          <Parameter Name="matricula" Type="varchar" Mode="In" />
+          <Parameter Name="estado" Type="bit" Mode="In" />
+          <Parameter Name="pk_predio" Type="varchar" Mode="In" />
+          <Parameter Name="ubicar" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spMatriculaDerivadaseliminar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_ficha" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spMatriculaDerivadasmodificar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_matricula_derivada" Type="int" Mode="In" />
+          <Parameter Name="matricula" Type="varchar" Mode="In" />
+          <Parameter Name="estado" Type="bit" Mode="In" />
+          <Parameter Name="pk_predio" Type="varchar" Mode="In" />
+          <Parameter Name="ubicar" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="Estudio_JuridicoModelStoreContainer" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Estudio_JuridicoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Estudio_JuridicoEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="spFichaPredialPropietarioscrear">
+            <Parameter Name="id_ficha" Mode="In" Type="Int32" />
+            <Parameter Name="id_propietario" Mode="In" Type="Int32" />
+            <Parameter Name="anotacion" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spFichaPredialPropietariosmodificar">
+            <Parameter Name="id_ficha_perdial_propietario" Mode="In" Type="Int32" />
+            <Parameter Name="id_propietario" Mode="In" Type="Int32" />
+            <Parameter Name="anotacion" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spMatriculaDerivadascrear">
+            <Parameter Name="id_ficha" Mode="In" Type="Int32" />
+            <Parameter Name="matricula" Mode="In" Type="String" />
+            <Parameter Name="estado" Mode="In" Type="Boolean" />
+            <Parameter Name="pk_predio" Mode="In" Type="String" />
+            <Parameter Name="ubicar" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spMatriculaDerivadasmodificar">
+            <Parameter Name="id_matricula_derivada" Mode="In" Type="Int32" />
+            <Parameter Name="matricula" Mode="In" Type="String" />
+            <Parameter Name="estado" Mode="In" Type="Boolean" />
+            <Parameter Name="pk_predio" Mode="In" Type="String" />
+            <Parameter Name="ubicar" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spMatriculaDerivadasconsultar" ReturnType="Collection(Estudio_JuridicoModel.spMatriculaDerivadasconsultar_Result)">
+            <Parameter Name="id_ficha" Mode="In" Type="Int32" />
+            <Parameter Name="matricula" Mode="In" Type="String" />
+            <Parameter Name="estado" Mode="In" Type="Boolean" />
+            <Parameter Name="pk_predio" Mode="In" Type="String" />
+            <Parameter Name="ubicar" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spFichaPredialeseliminar">
+          <Parameter Name="id_ficha" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spFichaPredialesconsultar" ReturnType="Collection(Estudio_JuridicoModel.spFichaPredialesconsultar_Result)">
+          <Parameter Name="numero_ficha" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spFichaPredialPropietariosconsultar" ReturnType="Collection(Estudio_JuridicoModel.spFichaPredialPropietariosconsultar_Result)">
+            <Parameter Name="id_ficha" Mode="In" Type="Int32" />
+            <Parameter Name="id_propietario" Mode="In" Type="Int32" />
+            <Parameter Name="anotacion" Mode="In" Type="String" />
+            <Parameter Name="id_ficha_predial_propietario" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spMatriculaDerivadaseliminar">
+          <Parameter Name="id_ficha" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spFichaPredialescrear" ReturnType="Collection(Decimal)">
+            <Parameter Name="numero_ficha" Mode="In" Type="String" />
+            <Parameter Name="folio_matriz" Mode="In" Type="String" />
+            <Parameter Name="estado_folio_matriz" Mode="In" Type="Boolean" />
+            <Parameter Name="fecha_apertura_folio" Mode="In" Type="DateTime" />
+            <Parameter Name="fecha_primera_anotacion" Mode="In" Type="DateTime" />
+            <Parameter Name="area_escritura" Mode="In" Type="Decimal" />
+            <Parameter Name="area_ovc" Mode="In" Type="Decimal" />
+            <Parameter Name="area_folio" Mode="In" Type="Decimal" />
+            <Parameter Name="ruta_archivo" Mode="In" Type="String" />
+            <Parameter Name="razon_diferencia_areas" Mode="In" Type="String" />
+            <Parameter Name="antecedentes" Mode="In" Type="String" />
+            <Parameter Name="estudio_folio_matriz" Mode="In" Type="String" />
+            <Parameter Name="analisis_areas" Mode="In" Type="String" />
+            <Parameter Name="anotacion_que_afecte_la_inscripcion" Mode="In" Type="String" />
+            <Parameter Name="proteccion_colectiva" Mode="In" Type="String" />
+            <Parameter Name="linderos" Mode="In" Type="String" />
+            <Parameter Name="instrucciones_visita_campo" Mode="In" Type="String" />
+            <Parameter Name="direccion_folio" Mode="In" Type="String" />
+            <Parameter Name="quien_elaboro_yaprobo" Mode="In" Type="String" />
+            <Parameter Name="fecha_control_calidad_juridico" Mode="In" Type="DateTime" />
+            <Parameter Name="control_calidad_juridico" Mode="In" Type="String" />
+            <Parameter Name="aprobacion_interventoria" Mode="In" Type="String" />
+            <Parameter Name="fecha_aprobacion" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="spFichaPredialesmodificar">
+            <Parameter Name="id_ficha" Mode="In" Type="Int32" />
+            <Parameter Name="folio_matriz" Mode="In" Type="String" />
+            <Parameter Name="estado_folio_matriz" Mode="In" Type="Boolean" />
+            <Parameter Name="fecha_apertura_folio" Mode="In" Type="DateTime" />
+            <Parameter Name="fecha_primera_anotacion" Mode="In" Type="DateTime" />
+            <Parameter Name="area_escritura" Mode="In" Type="Decimal" />
+            <Parameter Name="area_ovc" Mode="In" Type="Decimal" />
+            <Parameter Name="area_folio" Mode="In" Type="Decimal" />
+            <Parameter Name="ruta_archivo" Mode="In" Type="String" />
+            <Parameter Name="razon_diferencia_areas" Mode="In" Type="String" />
+            <Parameter Name="antecedentes" Mode="In" Type="String" />
+            <Parameter Name="estudio_folio_matriz" Mode="In" Type="String" />
+            <Parameter Name="analisis_areas" Mode="In" Type="String" />
+            <Parameter Name="anotacion_que_afecta_la_inscripcion" Mode="In" Type="String" />
+            <Parameter Name="proteccion_colectiva" Mode="In" Type="String" />
+            <Parameter Name="linderos" Mode="In" Type="String" />
+            <Parameter Name="instrucciones_visita_campo" Mode="In" Type="String" />
+            <Parameter Name="direccion_folio" Mode="In" Type="String" />
+            <Parameter Name="quien_elaboro_yaprobo" Mode="In" Type="String" />
+            <Parameter Name="fecha_control_calidad_juridico" Mode="In" Type="DateTime" />
+            <Parameter Name="control_calidad_juridico" Mode="In" Type="String" />
+            <Parameter Name="aprobacion_interventoria" Mode="In" Type="String" />
+            <Parameter Name="fecha_aprobacion" Mode="In" Type="DateTime" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="spMatriculaDerivadasconsultar_Result">
+          <Property Type="Int32" Name="id_ficha" Nullable="true" />
+          <Property Type="String" Name="matricula" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="estado" Nullable="true" />
+          <Property Type="String" Name="pk_predio" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ubicar" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="spFichaPredialesconsultar_Result">
+          <Property Type="Int32" Name="id_ficha" Nullable="false" />
+          <Property Type="String" Name="numero_ficha" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="folio_matriz" Nullable="true" MaxLength="60" />
+          <Property Type="Boolean" Name="estado_folio_matriz" Nullable="true" />
+          <Property Type="DateTime" Name="fecha_apertura_folio" Nullable="true" Precision="23" />
+          <Property Type="Decimal" Name="area_escritura" Nullable="true" Precision="15" Scale="2" />
+          <Property Type="Decimal" Name="area_ovc" Nullable="true" Precision="15" Scale="2" />
+          <Property Type="String" Name="ruta_archivo" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="razon_diferencia_areas" Nullable="false" MaxLength="400" />
+          <Property Type="String" Name="antecedentes" Nullable="false" MaxLength="400" />
+          <Property Type="String" Name="estudio_folio_matriz" Nullable="true" MaxLength="400" />
+          <Property Type="String" Name="analisis_areas" Nullable="false" MaxLength="400" />
+          <Property Type="String" Name="anotacion_que_afecta_la_inscripcion" Nullable="false" MaxLength="400" />
+          <Property Type="String" Name="proteccion_colectiva" Nullable="false" MaxLength="400" />
+          <Property Type="String" Name="linderos" Nullable="false" MaxLength="400" />
+          <Property Type="String" Name="instrucciones_visita_campo" Nullable="false" MaxLength="400" />
+          <Property Type="Decimal" Name="area_folio" Nullable="true" Precision="15" Scale="2" />
+          <Property Type="DateTime" Name="fecha_primera_anotacion" Nullable="true" Precision="23" />
+          <Property Type="String" Name="direccion_folio" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="quien_elaboro_yaprobo" Nullable="true" MaxLength="200" />
+          <Property Type="DateTime" Name="fecha_control_calidad_juridico" Nullable="true" Precision="23" />
+          <Property Type="String" Name="control_calidad_juridico" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="aprobacion_interventoria" Nullable="true" MaxLength="200" />
+          <Property Type="DateTime" Name="fecha_aprobacion" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="spFichaPredialPropietariosconsultar_Result">
+          <Property Type="Int32" Name="id_ficha" Nullable="true" />
+          <Property Type="Int32" Name="id_propietario" Nullable="true" />
+          <Property Type="String" Name="anotacion" Nullable="true" MaxLength="30" />
+          <Property Type="Int32" Name="id_ficha_perdial_propietario" Nullable="false" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Estudio_JuridicoModelStoreContainer" CdmEntityContainer="Estudio_JuridicoEntities" >
+          <FunctionImportMapping FunctionImportName="spFichaPredialPropietarioscrear" FunctionName="Estudio_JuridicoModel.Store.spFichaPredialPropietarioscrear" />
+          <FunctionImportMapping FunctionImportName="spFichaPredialPropietariosmodificar" FunctionName="Estudio_JuridicoModel.Store.spFichaPredialPropietariosmodificar" />
+          <FunctionImportMapping FunctionImportName="spMatriculaDerivadascrear" FunctionName="Estudio_JuridicoModel.Store.spMatriculaDerivadascrear" />
+          <FunctionImportMapping FunctionImportName="spMatriculaDerivadasmodificar" FunctionName="Estudio_JuridicoModel.Store.spMatriculaDerivadasmodificar" />
+          <FunctionImportMapping FunctionImportName="spMatriculaDerivadasconsultar" FunctionName="Estudio_JuridicoModel.Store.spMatriculaDerivadasconsultar">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Estudio_JuridicoModel.spMatriculaDerivadasconsultar_Result">
+                <ScalarProperty Name="id_ficha" ColumnName="id_ficha" />
+                <ScalarProperty Name="matricula" ColumnName="matricula" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="pk_predio" ColumnName="pk_predio" />
+                <ScalarProperty Name="ubicar" ColumnName="ubicar" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spFichaPredialeseliminar" FunctionName="Estudio_JuridicoModel.Store.spFichaPredialeseliminar" />
+          <FunctionImportMapping FunctionImportName="spFichaPredialesconsultar" FunctionName="Estudio_JuridicoModel.Store.spFichaPredialesconsultar">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Estudio_JuridicoModel.spFichaPredialesconsultar_Result">
+                <ScalarProperty Name="id_ficha" ColumnName="id_ficha" />
+                <ScalarProperty Name="numero_ficha" ColumnName="numero_ficha" />
+                <ScalarProperty Name="folio_matriz" ColumnName="folio_matriz" />
+                <ScalarProperty Name="estado_folio_matriz" ColumnName="estado_folio_matriz" />
+                <ScalarProperty Name="fecha_apertura_folio" ColumnName="fecha_apertura_folio" />
+                <ScalarProperty Name="area_escritura" ColumnName="area_escritura" />
+                <ScalarProperty Name="area_ovc" ColumnName="area_ovc" />
+                <ScalarProperty Name="ruta_archivo" ColumnName="ruta_archivo" />
+                <ScalarProperty Name="razon_diferencia_areas" ColumnName="razon_diferencia_areas" />
+                <ScalarProperty Name="antecedentes" ColumnName="antecedentes" />
+                <ScalarProperty Name="estudio_folio_matriz" ColumnName="estudio_folio_matriz" />
+                <ScalarProperty Name="analisis_areas" ColumnName="analisis_areas" />
+                <ScalarProperty Name="anotacion_que_afecta_la_inscripcion" ColumnName="anotacion_que_afecta_la_inscripcion" />
+                <ScalarProperty Name="proteccion_colectiva" ColumnName="proteccion_colectiva" />
+                <ScalarProperty Name="linderos" ColumnName="linderos" />
+                <ScalarProperty Name="instrucciones_visita_campo" ColumnName="instrucciones_visita_campo" />
+                <ScalarProperty Name="area_folio" ColumnName="area_folio" />
+                <ScalarProperty Name="fecha_primera_anotacion" ColumnName="fecha_primera_anotacion" />
+                <ScalarProperty Name="direccion_folio" ColumnName="direccion_folio" />
+                <ScalarProperty Name="quien_elaboro_yaprobo" ColumnName="quien_elaboro_yaprobo" />
+                <ScalarProperty Name="fecha_control_calidad_juridico" ColumnName="fecha_control_calidad_juridico" />
+                <ScalarProperty Name="control_calidad_juridico" ColumnName="control_calidad_juridico" />
+                <ScalarProperty Name="aprobacion_interventoria" ColumnName="aprobacion_interventoria" />
+                <ScalarProperty Name="fecha_aprobacion" ColumnName="fecha_aprobacion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spFichaPredialPropietariosconsultar" FunctionName="Estudio_JuridicoModel.Store.spFichaPredialPropietariosconsultar">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Estudio_JuridicoModel.spFichaPredialPropietariosconsultar_Result">
+                <ScalarProperty Name="id_ficha" ColumnName="id_ficha" />
+                <ScalarProperty Name="id_propietario" ColumnName="id_propietario" />
+                <ScalarProperty Name="anotacion" ColumnName="anotacion" />
+                <ScalarProperty Name="id_ficha_perdial_propietario" ColumnName="id_ficha_perdial_propietario" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spMatriculaDerivadaseliminar" FunctionName="Estudio_JuridicoModel.Store.spMatriculaDerivadaseliminar" />
+          <FunctionImportMapping FunctionImportName="spFichaPredialescrear" FunctionName="Estudio_JuridicoModel.Store.spFichaPredialescrear" />
+          <FunctionImportMapping FunctionImportName="spFichaPredialesmodificar" FunctionName="Estudio_JuridicoModel.Store.spFichaPredialesmodificar" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
