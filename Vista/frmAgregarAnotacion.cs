@@ -27,12 +27,13 @@ namespace Vista
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if(txtAnotacion.Text != string.Empty)
+            if (txtAnotacion.Text != string.Empty)
             {
                 Consultar_Propietario_Result objConsultarPropietario = (Consultar_Propietario_Result)
                 objfrmFichaPredial.dgvPropietarios.SelectedRows[0].DataBoundItem;
                 objConsultarPropietario.anotacion = txtAnotacion.Text;
                 objfrmFichaPredial.dgvPropietarios.SelectedRows[0].Cells["dgvPropietariosAnotacion"].Value = txtAnotacion.Text;
+               // objfrmFichaPredial.dgvPropietarios.SelectedRows[0].Cells["dgvPropietariosCausaActo"].Value = txtCausaActo.Text 
                 objfrmFichaPredial.dgvPropietarios.Refresh();
                 Close();
             }
@@ -47,6 +48,7 @@ namespace Vista
             txtCedula.Text = string.Empty;
             txtPropietario.Text = string.Empty;
             txtDerecho.Text = string.Empty;
+            txtCausaActo.Text = string.Empty;
         }
 
         private void frmAgregarAnotacion_Load(object sender, EventArgs e)
@@ -59,6 +61,7 @@ namespace Vista
             if(objfrmFichaPredial.dgvPropietarios.SelectedRows[0].Cells["dgvPropietariosAnotacion"].Value != null)
             {
                 txtAnotacion.Text = objfrmFichaPredial.dgvPropietarios.SelectedRows[0].Cells["dgvPropietariosAnotacion"].Value.ToString();
+                //txtCausaActo.Text = objfrmFichaPredial.dgvPropietarios.SelectedRows[0].Cells["dgvPropietariosCausaActo"].Value.ToString();
             }
             
         }

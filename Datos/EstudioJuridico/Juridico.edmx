@@ -141,9 +141,6 @@
           <FunctionImport Name="spFichaPredialeseliminar">
           <Parameter Name="id_ficha" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="spFichaPredialesconsultar" ReturnType="Collection(Estudio_JuridicoModel.spFichaPredialesconsultar_Result)">
-          <Parameter Name="numero_ficha" Mode="In" Type="String" />
-          </FunctionImport>
           <FunctionImport Name="spFichaPredialPropietariosconsultar" ReturnType="Collection(Estudio_JuridicoModel.spFichaPredialPropietariosconsultar_Result)">
             <Parameter Name="id_ficha" Mode="In" Type="Int32" />
             <Parameter Name="id_propietario" Mode="In" Type="Int32" />
@@ -203,6 +200,9 @@
             <Parameter Name="aprobacion_interventoria" Mode="In" Type="String" />
             <Parameter Name="fecha_aprobacion" Mode="In" Type="DateTime" />
           </FunctionImport>
+          <FunctionImport Name="spFichaPredialesconsultar" ReturnType="Collection(Estudio_JuridicoModel.spFichaPredialesconsultar_Result)">
+            <Parameter Name="numero_ficha" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="spMatriculaDerivadasconsultar_Result">
           <Property Type="Int32" Name="id_ficha" Nullable="true" />
@@ -210,6 +210,12 @@
           <Property Type="Boolean" Name="estado" Nullable="true" />
           <Property Type="String" Name="pk_predio" Nullable="true" MaxLength="50" />
           <Property Type="String" Name="ubicar" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="spFichaPredialPropietariosconsultar_Result">
+          <Property Type="Int32" Name="id_ficha" Nullable="true" />
+          <Property Type="Int32" Name="id_propietario" Nullable="true" />
+          <Property Type="String" Name="anotacion" Nullable="true" MaxLength="30" />
+          <Property Type="Int32" Name="id_ficha_perdial_propietario" Nullable="false" />
         </ComplexType>
         <ComplexType Name="spFichaPredialesconsultar_Result">
           <Property Type="Int32" Name="id_ficha" Nullable="false" />
@@ -237,12 +243,6 @@
           <Property Type="String" Name="aprobacion_interventoria" Nullable="true" MaxLength="200" />
           <Property Type="DateTime" Name="fecha_aprobacion" Nullable="true" Precision="23" />
         </ComplexType>
-        <ComplexType Name="spFichaPredialPropietariosconsultar_Result">
-          <Property Type="Int32" Name="id_ficha" Nullable="true" />
-          <Property Type="Int32" Name="id_propietario" Nullable="true" />
-          <Property Type="String" Name="anotacion" Nullable="true" MaxLength="30" />
-          <Property Type="Int32" Name="id_ficha_perdial_propietario" Nullable="false" />
-        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -265,6 +265,19 @@
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="spFichaPredialeseliminar" FunctionName="Estudio_JuridicoModel.Store.spFichaPredialeseliminar" />
+          <FunctionImportMapping FunctionImportName="spFichaPredialPropietariosconsultar" FunctionName="Estudio_JuridicoModel.Store.spFichaPredialPropietariosconsultar">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Estudio_JuridicoModel.spFichaPredialPropietariosconsultar_Result">
+                <ScalarProperty Name="id_ficha" ColumnName="id_ficha" />
+                <ScalarProperty Name="id_propietario" ColumnName="id_propietario" />
+                <ScalarProperty Name="anotacion" ColumnName="anotacion" />
+                <ScalarProperty Name="id_ficha_perdial_propietario" ColumnName="id_ficha_perdial_propietario" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spMatriculaDerivadaseliminar" FunctionName="Estudio_JuridicoModel.Store.spMatriculaDerivadaseliminar" />
+          <FunctionImportMapping FunctionImportName="spFichaPredialescrear" FunctionName="Estudio_JuridicoModel.Store.spFichaPredialescrear" />
+          <FunctionImportMapping FunctionImportName="spFichaPredialesmodificar" FunctionName="Estudio_JuridicoModel.Store.spFichaPredialesmodificar" />
           <FunctionImportMapping FunctionImportName="spFichaPredialesconsultar" FunctionName="Estudio_JuridicoModel.Store.spFichaPredialesconsultar">
             <ResultMapping>
               <ComplexTypeMapping TypeName="Estudio_JuridicoModel.spFichaPredialesconsultar_Result">
@@ -295,19 +308,6 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="spFichaPredialPropietariosconsultar" FunctionName="Estudio_JuridicoModel.Store.spFichaPredialPropietariosconsultar">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="Estudio_JuridicoModel.spFichaPredialPropietariosconsultar_Result">
-                <ScalarProperty Name="id_ficha" ColumnName="id_ficha" />
-                <ScalarProperty Name="id_propietario" ColumnName="id_propietario" />
-                <ScalarProperty Name="anotacion" ColumnName="anotacion" />
-                <ScalarProperty Name="id_ficha_perdial_propietario" ColumnName="id_ficha_perdial_propietario" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="spMatriculaDerivadaseliminar" FunctionName="Estudio_JuridicoModel.Store.spMatriculaDerivadaseliminar" />
-          <FunctionImportMapping FunctionImportName="spFichaPredialescrear" FunctionName="Estudio_JuridicoModel.Store.spFichaPredialescrear" />
-          <FunctionImportMapping FunctionImportName="spFichaPredialesmodificar" FunctionName="Estudio_JuridicoModel.Store.spFichaPredialesmodificar" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

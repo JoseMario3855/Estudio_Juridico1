@@ -146,15 +146,6 @@ namespace Datos.EstudioJuridico
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spFichaPredialeseliminar", id_fichaParameter);
         }
     
-        public virtual ObjectResult<spFichaPredialesconsultar_Result> spFichaPredialesconsultar(string numero_ficha)
-        {
-            var numero_fichaParameter = numero_ficha != null ?
-                new ObjectParameter("numero_ficha", numero_ficha) :
-                new ObjectParameter("numero_ficha", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spFichaPredialesconsultar_Result>("spFichaPredialesconsultar", numero_fichaParameter);
-        }
-    
         public virtual ObjectResult<spFichaPredialPropietariosconsultar_Result> spFichaPredialPropietariosconsultar(Nullable<int> id_ficha, Nullable<int> id_propietario, string anotacion, Nullable<int> id_ficha_predial_propietario)
         {
             var id_fichaParameter = id_ficha.HasValue ?
@@ -377,6 +368,15 @@ namespace Datos.EstudioJuridico
                 new ObjectParameter("fecha_aprobacion", typeof(System.DateTime));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spFichaPredialesmodificar", id_fichaParameter, folio_matrizParameter, estado_folio_matrizParameter, fecha_apertura_folioParameter, fecha_primera_anotacionParameter, area_escrituraParameter, area_ovcParameter, area_folioParameter, ruta_archivoParameter, razon_diferencia_areasParameter, antecedentesParameter, estudio_folio_matrizParameter, analisis_areasParameter, anotacion_que_afecta_la_inscripcionParameter, proteccion_colectivaParameter, linderosParameter, instrucciones_visita_campoParameter, direccion_folioParameter, quien_elaboro_yaproboParameter, fecha_control_calidad_juridicoParameter, control_calidad_juridicoParameter, aprobacion_interventoriaParameter, fecha_aprobacionParameter);
+        }
+    
+        public virtual ObjectResult<spFichaPredialesconsultar_Result> spFichaPredialesconsultar(string numero_ficha)
+        {
+            var numero_fichaParameter = numero_ficha != null ?
+                new ObjectParameter("numero_ficha", numero_ficha) :
+                new ObjectParameter("numero_ficha", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spFichaPredialesconsultar_Result>("spFichaPredialesconsultar", numero_fichaParameter);
         }
     }
 }

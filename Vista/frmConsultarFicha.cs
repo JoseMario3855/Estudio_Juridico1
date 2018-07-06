@@ -38,10 +38,10 @@ namespace Vista
         {
             
             FichaPredialSicafi fichaPredialSicafi = new FichaPredialSicafi(
-                @"172.16.50.2\SQLEXPRESS"
+                @"DESKTOP-MDJ1QG7\SQLEXPRESS"
                 , "SICAFI"
                 , "sa"
-                , "conestudiosfame"
+                , "123"
                 );
             List<Consultar_Predio_Result> lstFicha = fichaPredialSicafi.consultarFichaPredial(
                 txtMunicipio.Text
@@ -53,6 +53,9 @@ namespace Vista
                 , txtEdificio.Text
                 , txtUnidadPredial.Text
                 , txtFicha.Text
+                
+               
+
                 );
             if (lstFicha.Count < 1)
             {
@@ -63,7 +66,8 @@ namespace Vista
             {
                 dtvResultados.DataSource = lstFicha;
             }
-            
+          
+
             //this.Close();
         }
 
@@ -78,6 +82,7 @@ namespace Vista
             {
                 MessageBox.Show("Seleccione un predio", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            
         }
     }
 }

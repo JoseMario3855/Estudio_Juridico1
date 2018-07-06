@@ -35,8 +35,8 @@ namespace Negocio
                 , strUnidadPredial
                 , strFichasPrediales);
         }
-
-        public List<Consultar_Propietario_Result> consultarPropietario(int nufi)
+         
+    public List<Consultar_Propietario_Result> consultarPropietario(int nufi)
         {
             List<Consultar_Propietario_Result> lstPropietario = entitySicafi.Consultar_Propietario(nufi);
             return lstPropietario;

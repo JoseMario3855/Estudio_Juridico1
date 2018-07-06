@@ -38,6 +38,8 @@
             this.txtDerecho = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.lblCausaActo = new System.Windows.Forms.Label();
+            this.txtCausaActo = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblAnotacion
@@ -111,7 +113,7 @@
             // btnAgregar
             // 
             this.btnAgregar.BackColor = System.Drawing.Color.Gray;
-            this.btnAgregar.Location = new System.Drawing.Point(218, 168);
+            this.btnAgregar.Location = new System.Drawing.Point(216, 221);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 22);
             this.btnAgregar.TabIndex = 8;
@@ -122,7 +124,7 @@
             // btnSalir
             // 
             this.btnSalir.BackColor = System.Drawing.Color.Gray;
-            this.btnSalir.Location = new System.Drawing.Point(325, 167);
+            this.btnSalir.Location = new System.Drawing.Point(319, 220);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 9;
@@ -130,12 +132,30 @@
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // lblCausaActo
+            // 
+            this.lblCausaActo.AutoSize = true;
+            this.lblCausaActo.Location = new System.Drawing.Point(26, 161);
+            this.lblCausaActo.Name = "lblCausaActo";
+            this.lblCausaActo.Size = new System.Drawing.Size(65, 13);
+            this.lblCausaActo.TabIndex = 10;
+            this.lblCausaActo.Text = "Causa Acto:";
+            // 
+            // txtCausaActo
+            // 
+            this.txtCausaActo.Location = new System.Drawing.Point(92, 158);
+            this.txtCausaActo.Name = "txtCausaActo";
+            this.txtCausaActo.Size = new System.Drawing.Size(100, 20);
+            this.txtCausaActo.TabIndex = 11;
+            // 
             // frmAgregarAnotacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(441, 205);
+            this.ClientSize = new System.Drawing.Size(441, 255);
+            this.Controls.Add(this.txtCausaActo);
+            this.Controls.Add(this.lblCausaActo);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.txtDerecho);
@@ -166,5 +186,7 @@
         private System.Windows.Forms.TextBox txtDerecho;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Label lblCausaActo;
+        private System.Windows.Forms.TextBox txtCausaActo;
     }
 }

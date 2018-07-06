@@ -28,10 +28,10 @@ namespace Vista
         {
             frmConsultarFicha fr = new frmConsultarFicha(this);
             fr.ShowDialog();
-            FichaPredialSicafi objFichaPredialSicafi = new FichaPredialSicafi(@"172.16.50.2\SQLEXPRESS"
+            FichaPredialSicafi objFichaPredialSicafi = new FichaPredialSicafi(@"DESKTOP-MDJ1QG7\SQLEXPRESS"
                , "SICAFI"
                 , "sa"
-                , "conestudiosfame");
+                , "123");
             if (objConsultarPredio != null)
             {
                 
@@ -48,6 +48,12 @@ namespace Vista
                 txtAreaCampo.Text = objConsultarPredio.strAreaTerreno;
                 txtAdquisicion.Text = objConsultarPredio.strModoAdquisicion;
                 txtDireccionOvc.Text = objConsultarPredio.strDirreccion;
+                txtNombreMunicipio.Text = objConsultarPredio.strDescripcionMunicipio;
+                txtNombreCorregimiento.Text = objConsultarPredio.strDescripcionCorregimiento;
+                txtNombreBarrio.Text = objConsultarPredio.strDescripcionBarrio;
+                txtDestinoEconomico.Text = objConsultarPredio.strDestinoEconomico;
+               
+               
                 dgvPropietarios.DataSource = null;
 
 
@@ -78,6 +84,7 @@ namespace Vista
                         dtpFechaPrimeraAnotacion.MinDate = Convert.ToDateTime(objFichaJuridica.fecha_primera_anotacion);
                         dtpFechaControlCalidadJuridico.MinDate = Convert.ToDateTime(objFichaJuridica.fecha_control_calidad_juridico);
                         dtpFechaAprobacion.MinDate = Convert.ToDateTime(objFichaJuridica.fecha_aprobacion);
+                        
 
                         List<spMatriculaDerivadasconsultar_Result> lstMatriculasResultantes = model.spMatriculaDerivadasconsultar(objFichaJuridica.id_ficha, null, null, null, null).ToList();
                         if (lstMatriculasResultantes.Count > 0)
@@ -366,6 +373,21 @@ namespace Vista
 
         }
 
-       
+        private void lblFicha_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtFicha_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAgregarPropietarios_Click(object sender, EventArgs e)
+        {
+            frmAgregarPropietarioscs fr = new frmAgregarPropietarioscs();
+            fr.ShowDialog();
+
+        }
     }
 }

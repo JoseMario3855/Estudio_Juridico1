@@ -413,7 +413,9 @@ namespace Datos.Sicafi
                                    , string strPredio
                                    , string strEdificio
                                    , string strUnidadPredial
-                                   , string strFichasPrediales)
+                                   , string strFichasPrediales
+                                   , string strDescripcionMunicipio
+                                   , string strstrDescripcionCorregimiento)
         {
             List<Listas.Consultar_Predio_Result> objLstPredio = new List<Listas.Consultar_Predio_Result>();
             try

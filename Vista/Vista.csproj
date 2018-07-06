@@ -74,6 +74,12 @@
     <Compile Include="frmAgregarMatriculaDerivada.Designer.cs">
       <DependentUpon>frmAgregarMatriculaDerivada.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAgregarPropietarioscs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgregarPropietarioscs.Designer.cs">
+      <DependentUpon>frmAgregarPropietarioscs.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmConsultarFicha.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAgregarMatriculaDerivada.resx">
       <DependentUpon>frmAgregarMatriculaDerivada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAgregarPropietarioscs.resx">
+      <DependentUpon>frmAgregarPropietarioscs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmConsultarFicha.resx">
       <DependentUpon>frmConsultarFicha.cs</DependentUpon>
